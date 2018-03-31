@@ -1,0 +1,31 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable" access="global">
+    <div class="slds-form-element">
+        <div class="slds-box slds-theme_inverse">
+            <div class="slds-form-element__title slds-text-align_center" for="input-unique-id">
+                Test Your Typing Speed
+            </div>
+        </div>
+        <div class="slds-box slds-theme_success">
+            <div class="slds-form-element__instructions" for="input-unique-id">This is a typing test.  Your goal is to duplicate the provided text,
+                EXACTLY, in the field below.  The timer starts when you start typing, and only stops when you match this text exactly.  Good Luck!
+            </div>
+        </div>
+        <div class="slds-box slds-theme_error">
+            <div class="slds-form-element__marker slds-text-align_center" for="input-unique-id">
+                Type the following:
+            </div>
+        </div>
+        <div class="slds-box slds-theme_warning">
+            <div class="slds-form-element__texttotype slds-text-align_center" for="input-unique-id">
+                My dog has fleas.
+            </div>
+        </div>
+        <div class="slds-form-element__typingresults">
+            <ui:inputTextArea  keyup="{!c.onKeyUp}" aura:id="typingarea" class="slds-textarea" placeholder="Start typing..."></ui:inputTextArea>
+        </div>
+    </div>
+    <div class="timer" id="timer" aura:id="time">00:00:00</div>
+  <!-- <div class="button_reset"> -->
+        <button onclick="{!c.onKeyUp}" id="reset" class="slds-button slds-button_brand">Start Over</button>
+  <!-- </div> -->
+</aura:component>

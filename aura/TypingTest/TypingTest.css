@@ -1,0 +1,42 @@
+.THIS .slds-form-element__instructions {
+    color: white;
+    font-size: 20px;
+}
+
+.THIS .slds-form-element__title {
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+}
+
+.THIS .slds-form-element__title {
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+}
+
+.THIS .slds-form-element__texttotype {
+    font-weight: bold;
+    font-size: normal;
+    text-align: center;
+}
+
+.THIS .slds-textarea {
+    border-style: solid;
+    border-color: red;
+    height: 150px;
+}
+
+.timer.THIS{
+    font-color: black;
+    font-size: 45px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.button_reset.THIS {
+    text-align: center;
+    font-size: 25px;
+}
