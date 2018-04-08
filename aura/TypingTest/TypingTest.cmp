@@ -1,4 +1,18 @@
 <aura:component implements="flexipage:availableForAllPageTypes,force:appHostable" access="global">
+    <ltng:require styles="/resource/bootstrapcssmin" afterScriptsLoaded="{!c.doScriptLoad}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="stopwatch" type="Object"/>
+    <aura:attribute name="textADefaultplace" type="String"/>
+    <aura:attribute name="textADefaultvalue" type="String"/>
+    <!--here are I was trying to mix an aura handler with an <Input type="text" form tag...it didn't work.  I had to use lighting:textarea.  Right now  
+        I am not using the aura:handler, but I am going to leave it in as a reminder to explore how to use this later -->
+    <aura:handler name="change" value="{!v.textADefaultvalue}" action="{!c.handleValueChange}" />
+    <aura:attribute name="debugString" type="String"/>
+    <aura:attribute name="debugString1" type="String"/>
+    <aura:attribute name="debugString2" type="String"/>
+    <aura:attribute name="debugString3" type="String"/>
+    
+    
     <div class="slds-form-element">
         <div class="slds-box slds-theme_inverse">
             <div class="slds-form-element__title slds-text-align_center" for="input-unique-id">
@@ -20,12 +34,15 @@
                 My dog has fleas.
             </div>
         </div>
-        <div class="slds-form-element__typingresults">
-            <ui:inputTextArea  keyup="{!c.onKeyUp}" aura:id="typingarea" class="slds-textarea" placeholder="Start typing..."></ui:inputTextArea>
-        </div>
     </div>
-    <div class="timer" id="timer" aura:id="time">00:00:00</div>
-  <!-- <div class="button_reset"> -->
-        <button onclick="{!c.onKeyUp}" id="reset" class="slds-button slds-button_brand">Start Over</button>
-  <!-- </div> -->
+    <!-- in this case we used the lightning:textarea instead of input type ="textarea" or ui:inputtextarea because that way we could access the v.textADefaultvalue -->
+    <lightning:textArea onchange="{!c.onKeyUp}" aura:id="isTyping" class="slds-textarea" value="{!v.textADefaultvalue}" placeholder="{!v.textADefaultplace}"/>
+    <b><p>{!v.debugString}</p></b>
+    <b><p>{!v.debugString1}</p></b>
+    <b><p>{!v.debugString2}</p></b>
+    <b><p>{!v.debugString3}</p></b>
+    <div class="timer" aura:id="time">00:00:00</div>
+    <div class="button_reset">
+        <button onclick="{!c.onKeyUp}" id="resetBtn" class="slds-button slds-button_brand">Start Over</button>
+    </div> 
 </aura:component>

@@ -25,8 +25,10 @@
 
 .THIS .slds-textarea {
     border-style: solid;
+    border-width: thick;
     border-color: red;
     height: 150px;
+    color: black;
 }
 
 .timer.THIS{
